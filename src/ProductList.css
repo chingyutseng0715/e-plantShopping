@@ -47,12 +47,24 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.product-grid h1 div {
+  text-align: center; /* Centers the text horizontally */
+  background-color: #d3d3d3; /* Gray background like in the image */
+  padding: 15px 0; /* Top and bottom padding */
+  margin: 20px 0 10px 0; /* Spacing around the title */
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     /* background-color: pink; */
-    /* justify-content: space-between; */
+    justify-content: space-between; 
     padding: 20px;
     width: 100%;
     align-items: center;
@@ -84,6 +96,13 @@ body {
 .product-title {
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.product-cost {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 10px 0;
 }
 
 .product-price {
