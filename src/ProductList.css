@@ -152,6 +152,19 @@ body {
     margin-top: 10px;
 }
 
+.product-button.added,
+.product-button:disabled {
+    background-color: #95a5a6 !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.product-button.added:hover,
+.product-button:disabled:hover {
+    background-color: #95a5a6 !important;
+}
+
+
 .product-button:hover {
     background-color: #c0392b;
 }
