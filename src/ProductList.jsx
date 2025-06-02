@@ -11,6 +11,18 @@ function ProductList({ onHomeClick }) {
     const CartItems = useSelector(state => state.cart.items);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+
+        const cartItemNames = CartItems.map(item => item.name);
+        setAddedToCart(() => {
+          const newState = {};
+
+          cartItemNames.forEach(name => {
+            newState[name] = true;
+          });
+          return newState;
+        });
+      }, [CartItems]);
 
     const plantsArray = [
         {
@@ -270,6 +282,12 @@ function ProductList({ onHomeClick }) {
           [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
         }));
       };
+      const handleItemRemoved = (itemName) => {
+        setAddedToCart((prevState) => ({
+          ...prevState,
+          [itemName]: false,
+        }));
+      };
     return (
         <div>
             <div className="navbar" style={styleObj}>
@@ -328,7 +346,7 @@ function ProductList({ onHomeClick }) {
 
                 </div>
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={handleContinueShopping}/>
             )}
         </div>
     );
